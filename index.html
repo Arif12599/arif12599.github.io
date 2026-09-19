@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Arif Hussain — IT & Manufacturing Technology Engineer</title>
+<meta name="description" content="Portfolio of Arif Hussain — IT Support Associate Level III | Manufacturing IT, MES, OT/IT Integration & DevOps." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070b14;
+  --bg-2:#0c1221;
+  --card:rgba(255,255,255,.04);
+  --stroke:rgba(255,255,255,.09);
+  --txt:#e8edf7;
+  --muted:#93a1bd;
+  --accent:#3ddc97;
+  --accent-2:#4a9dff;
+  --accent-3:#b07cff;
+  --glow:0 0 40px rgba(61,220,151,.18);
+  --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--txt);
+  font-family:'Inter',system-ui,sans-serif;
+  line-height:1.65;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+/* animated background */
+.bg-orbs{position:fixed;inset:0;z-index:-2;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.35;animation:float 18s ease-in-out infinite}
+.orb.a{width:480px;height:480px;background:#0f7a56;top:-120px;left:-100px}
+.orb.b{width:420px;height:420px;background:#1b4f97;bottom:-140px;right:-80px;animation-delay:-6s}
+.orb.c{width:360px;height:360px;background:#5a35a1;top:45%;left:55%;animation-delay:-11s}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-50px) scale(1.12)}}
+.grid-overlay{position:fixed;inset:0;z-index:-1;
+  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse at 50% 0%,#000 30%,transparent 78%);
+  -webkit-mask-image:radial-gradient(ellipse at 50% 0%,#000 30%,transparent 78%);
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(7,11,20,.72);border-bottom:1px solid var(--stroke)}
+.nav-in{max-width:1080px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-weight:800;letter-spacing:-.4px;font-size:1.05rem;display:flex;align-items:center;gap:10px}
+.brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.nav-links{display:flex;gap:26px;font-size:.9rem}
+.nav-links a{color:var(--muted);text-decoration:none;transition:.25s;position:relative}
+.nav-links a:hover{color:var(--txt)}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--accent);transition:.25s}
+.nav-links a:hover::after{width:100%}
+@media(max-width:760px){.nav-links{display:none}}
+
+/* HERO */
+header{padding:96px 0 72px}
+.badge{display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border:1px solid var(--stroke);
+  border-radius:999px;font-size:.78rem;color:var(--muted);background:var(--card);margin-bottom:26px}
+.badge b{color:var(--accent);font-weight:600}
+h1{font-size:clamp(2.4rem,6.2vw,4.1rem);line-height:1.06;letter-spacing:-2px;font-weight:800;margin-bottom:18px}
+.grad{background:linear-gradient(110deg,var(--accent),var(--accent-2) 55%,var(--accent-3));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-family:'JetBrains Mono',monospace;color:var(--accent-2);font-size:clamp(.92rem,2.3vw,1.12rem);margin-bottom:22px;min-height:1.6em}
+.cursor{display:inline-block;width:9px;background:var(--accent);margin-left:2px;animation:blink .9s step-end infinite}
+@keyframes blink{50%{opacity:0}}
+.lede{color:var(--muted);font-size:1.06rem;max-width:660px;margin-bottom:34px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{padding:13px 26px;border-radius:12px;text-decoration:none;font-weight:600;font-size:.94rem;
+  display:inline-flex;align-items:center;gap:9px;transition:.25s;border:1px solid transparent}
+.btn-1{background:linear-gradient(120deg,var(--accent),#2bb47c);color:#04150e;box-shadow:var(--glow)}
+.btn-1:hover{transform:translateY(-3px);box-shadow:0 12px 34px rgba(61,220,151,.32)}
+.btn-2{border-color:var(--stroke);color:var(--txt);background:var(--card)}
+.btn-2:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px)}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-top:56px}
+.stat{background:var(--card);border:1px solid var(--stroke);border-radius:var(--radius);padding:22px;text-align:center;transition:.3s}
+.stat:hover{transform:translateY(-5px);border-color:rgba(61,220,151,.4)}
+.stat .n{font-size:2rem;font-weight:800;background:linear-gradient(120deg,var(--accent),var(--accent-2));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .l{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.2px}
+
+/* SECTIONS */
+section{padding:74px 0;border-top:1px solid rgba(255,255,255,.055)}
+.eyebrow{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:.8rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);letter-spacing:-1px;font-weight:800;margin-bottom:16px}
+.sec-sub{color:var(--muted);max-width:640px;margin-bottom:40px}
+.reveal{opacity:0;transform:translateY(26px);transition:.7s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ABOUT */
+.about{display:grid;grid-template-columns:1.25fr .95fr;gap:34px;align-items:start}
+@media(max-width:860px){.about{grid-template-columns:1fr}}
+.panel{background:var(--card);border:1px solid var(--stroke);border-radius:var(--radius);padding:28px}
+.panel p+p{margin-top:14px}
+.panel p{color:var(--muted)}
+.panel strong{color:var(--txt)}
+.info-row{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px dashed rgba(255,255,255,.08);font-size:.92rem}
+.info-row:last-child{border:none}
+.info-row span:first-child{color:var(--muted)}
+.info-row span:last-child{font-weight:600;text-align:right}
+
+/* SKILLS */
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:18px}
+.skill-card{background:var(--card);border:1px solid var(--stroke);border-radius:var(--radius);padding:24px;transition:.3s;position:relative;overflow:hidden}
+.skill-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));transform:scaleX(0);transform-origin:left;transition:.4s}
+.skill-card:hover::before{transform:scaleX(1)}
+.skill-card:hover{transform:translateY(-6px);border-color:rgba(74,157,255,.4)}
+.skill-card h3{font-size:1.02rem;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.ico{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-size:1rem;
+  background:linear-gradient(135deg,rgba(61,220,151,.18),rgba(74,157,255,.18));border:1px solid var(--stroke)}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:.76rem;padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.055);
+  border:1px solid var(--stroke);color:var(--muted);font-family:'JetBrains Mono',monospace}
+.skill-card:hover .tag{border-color:rgba(61,220,151,.28);color:var(--txt)}
+
+/* TIMELINE */
+.tl{position:relative;padding-left:34px}
+.tl::before{content:'';position:absolute;left:9px;top:6px;bottom:6px;width:2px;
+  background:linear-gradient(180deg,var(--accent),var(--accent-2),transparent)}
+.tl-item{position:relative;margin-bottom:34px}
+.tl-item::before{content:'';position:absolute;left:-32px;top:6px;width:14px;height:14px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--accent);box-shadow:0 0 0 4px rgba(61,220,151,.12)}
+.tl-date{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--accent);letter-spacing:.6px}
+.tl-item h3{font-size:1.14rem;margin:5px 0 3px}
+.tl-org{color:var(--accent-2);font-size:.9rem;margin-bottom:10px}
+.tl-item ul{list-style:none;color:var(--muted);font-size:.93rem}
+.tl-item li{padding-left:20px;position:relative;margin-bottom:7px}
+.tl-item li::before{content:'▸';position:absolute;left:0;color:var(--accent)}
+
+/* PROJECTS */
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+.proj{background:var(--card);border:1px solid var(--stroke);border-radius:var(--radius);padding:24px;transition:.3s}
+.proj:hover{transform:translateY(-6px);border-color:rgba(176,124,255,.42);box-shadow:0 16px 40px rgba(0,0,0,.35)}
+.proj h3{font-size:1.04rem;margin-bottom:9px}
+.proj p{color:var(--muted);font-size:.91rem;margin-bottom:14px}
+.impact{font-size:.78rem;font-family:'JetBrains Mono',monospace;color:var(--accent);
+  border-left:2px solid var(--accent);padding-left:10px}
+
+/* FAREWELL */
+.farewell{background:linear-gradient(135deg,rgba(61,220,151,.07),rgba(74,157,255,.07));
+  border:1px solid var(--stroke);border-radius:26px;padding:44px}
+.farewell .quote{font-size:clamp(1.05rem,2.4vw,1.28rem);font-weight:500;line-height:1.75;margin-bottom:18px}
+.farewell p{color:var(--muted);margin-bottom:14px}
+.sign{font-family:'JetBrains Mono',monospace;color:var(--accent);margin-top:22px;font-size:.92rem}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:16px}
+.cc{background:var(--card);border:1px solid var(--stroke);border-radius:var(--radius);padding:22px;
+  text-decoration:none;color:var(--txt);transition:.3s;display:block}
+.cc:hover{transform:translateY(-5px);border-color:var(--accent);background:rgba(61,220,151,.06)}
+.cc .k{font-size:.74rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.3px;margin-bottom:6px}
+.cc .v{font-weight:600;font-size:.95rem;word-break:break-word}
+
+footer{padding:36px 0 46px;text-align:center;color:var(--muted);font-size:.85rem;border-top:1px solid var(--stroke)}
+
+/* ---- PROJECT IMAGE CARDS ---- */
+.proj-grid{grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px}
+.proj{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.proj-media{display:block;width:100%;height:194px;object-fit:cover;background:#0c1221;
+  border-bottom:1px solid var(--stroke);transition:transform .55s cubic-bezier(.2,.7,.3,1)}
+.proj:hover .proj-media{transform:scale(1.06)}
+.proj-media-wrap{overflow:hidden;position:relative}
+.proj-media-wrap::after{content:'';position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(7,11,20,.12) 0%,rgba(7,11,20,.55) 62%,rgba(7,11,20,.92) 100%)}
+.proj-chip{position:absolute;top:14px;left:14px;z-index:3;font-family:'JetBrains Mono',monospace;
+  font-size:.68rem;letter-spacing:1.1px;text-transform:uppercase;padding:5px 11px;border-radius:999px;
+  background:rgba(7,11,20,.72);border:1px solid rgba(61,220,151,.45);color:var(--accent);backdrop-filter:blur(6px)}
+.proj-body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+.proj-body h3{font-size:1.06rem;margin-bottom:9px}
+.proj-body p{color:var(--muted);font-size:.91rem;margin-bottom:14px;flex:1}
+.proj-stack{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px}
+.proj-stack span{font-size:.7rem;font-family:'JetBrains Mono',monospace;padding:4px 9px;border-radius:6px;
+  background:rgba(74,157,255,.09);border:1px solid rgba(74,157,255,.22);color:#9ec5ff}
+.note-img{margin-top:26px;font-size:.78rem;color:var(--muted);opacity:.65;text-align:center;font-style:italic}
+
+::selection{background:var(--accent);color:#04150e}
+</style>
+</head>
+<body>
+<div class="bg-orbs"><div class="orb a"></div><div class="orb b"></div><div class="orb c"></div></div>
+<div class="grid-overlay"></div>
+
+<nav>
+  <div class="nav-in">
+    <div class="brand"><span class="dot"></span> Arif Hussain</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#journey">Journey</a>
+      <a href="#work">Work</a>
+      <a href="#note">A Note</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="badge">👋 <b>Thank you, Cummins</b> &nbsp;·&nbsp; Next chapter begins 28 Sept 2026</div>
+    <h1>Hi, I'm Arif Hussain.<br><span class="grad">I connect the plant floor to the cloud.</span></h1>
+    <div class="role"><span id="typed"></span><span class="cursor">&nbsp;</span></div>
+    <p class="lede">IT Engineer with deep hands-on experience across Manufacturing IT, MES, OT/IT integration and DevOps — turning shop-floor data into systems people actually rely on, every shift, every day.</p>
+    <div class="cta">
+      <a class="btn btn-1" href="#contact">Let's stay connected →</a>
+      <a class="btn btn-2" href="#note">Read my farewell note</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="n" data-count="4">0</div><div class="l">Years in IT / OT</div></div>
+      <div class="stat"><div class="n" data-count="4">0</div><div class="l">Projects delivered</div></div>
+      <div class="stat"><div class="n" data-count="3">0</div><div class="l">×7 Plant support</div></div>
+      <div class="stat"><div class="n" data-count="3">0</div><div class="l">Domains bridged</div></div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap reveal">
+    <div class="eyebrow">01 — About</div>
+    <h2>Engineer by trade, problem-solver by instinct</h2>
+    <p class="sec-sub">I've spent my career in the space where IT meets the factory floor — where a firewall rule, a PLC tag and a production target are all part of the same conversation.</p>
+    <div class="about">
+      <div class="panel">
+        <p>As <strong>IT Support Associate – Level III</strong> at the Cummins COE Plant in Phaltan, I've owned everything from OT network troubleshooting and MES application support to digital transformation initiatives that changed how the plant works day to day.</p>
+        <p>My favourite kind of problem is the one nobody can categorise — the AMR that won't talk to the PLC, the MES transaction stuck between ERP and the line, the VLAN that works everywhere except the one place it matters. I enjoy pulling the right teams together, diagnosing methodically, and closing it properly rather than temporarily.</p>
+        <p>Alongside that, I've built <strong>Power Apps</strong> for HSE and maintenance checksheets, deployed the <strong>VMS visitor portal</strong>, driven <strong>EMS/BMS and OT rack</strong> infrastructure projects, and supported plant-wide <strong>AI and application rebranding</strong> rollouts — always with the end user in mind.</p>
+        <p>Now I'm carrying that blend of manufacturing depth and modern DevOps/cloud practice into my next role.</p>
+      </div>
+      <div class="panel">
+        <div class="info-row"><span>Current Role</span><span>IT Support Associate – L3</span></div>
+        <div class="info-row"><span>Organisation</span><span>Cummins, COE Phaltan</span></div>
+        <div class="info-row"><span>Base Location</span><span>Phaltan / Pune, MH</span></div>
+        <div class="info-row"><span>Core Focus</span><span>Manufacturing IT &amp; OT</span></div>
+        <div class="info-row"><span>Growing Into</span><span>DevOps &amp; Cloud (Azure/AWS)</span></div>
+        <div class="info-row"><span>Languages</span><span>English, Hindi, Marathi</span></div>
+        <div class="info-row"><span>Status</span><span style="color:var(--accent)">Moving to a new chapter</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap reveal">
+    <div class="eyebrow">02 — Capabilities</div>
+    <h2>What I bring to the table</h2>
+    <p class="sec-sub">A stack built in the real world — production lines, escalation calls and go-live weekends, not just documentation.</p>
+    <div class="skill-grid">
+      <div class="skill-card">
+        <h3><span class="ico">🏭</span> Manufacturing IT &amp; MES</h3>
+        <div class="tags"><span class="tag">Apriso / CMES</span><span class="tag">SCADA</span><span class="tag">OEE</span><span class="tag">Serial Tracking</span><span class="tag">ERP Integration</span></div>
+      </div>
+      <div class="skill-card">
+        <h3><span class="ico">⚙️</span> OT &amp; Automation</h3>
+        <div class="tags"><span class="tag">Siemens S7-1200/1500</span><span class="tag">Modbus TCP</span><span class="tag">IIoT Gateways</span><span class="tag">AMR Integration</span><span class="tag">OT Networks</span></div>
+      </div>
+      <div class="skill-card">
+        <h3><span class="ico">☁️</span> DevOps &amp; Cloud</h3>
+        <div class="tags"><span class="tag">Azure</span><span class="tag">AWS</span><span class="tag">Kubernetes</span><span class="tag">Docker</span><span class="tag">Jenkins</span><span class="tag">GitOps</span><span class="tag">Azure DevOps</span></div>
+      </div>
+      <div class="skill-card">
+        <h3><span class="ico">🌐</span> Infrastructure &amp; Network</h3>
+        <div class="tags"><span class="tag">VLAN / Routing</span><span class="tag">Firewall &amp; NAT</span><span class="tag">Wireless / AP</span><span class="tag">Structured Cabling</span><span class="tag">Linux</span></div>
+      </div>
+      <div class="skill-card">
+        <h3><span class="ico">📊</span> Apps, Data &amp; Monitoring</h3>
+        <div class="tags"><span class="tag">Power Apps</span><span class="tag">Mendix</span><span class="tag">SQL / Oracle</span><span class="tag">Grafana</span><span class="tag">ELK</span><span class="tag">RabbitMQ</span></div>
+      </div>
+      <div class="skill-card">
+        <h3><span class="ico">🤝</span> Service &amp; Delivery</h3>
+        <div class="tags"><span class="tag">ServiceNow</span><span class="tag">Maximo</span><span class="tag">Incident Mgmt</span><span class="tag">Vendor &amp; PR/PO</span><span class="tag">SOP &amp; Documentation</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="wrap reveal">
+    <div class="eyebrow">03 — Journey</div>
+    <h2>The road so far</h2>
+    <p class="sec-sub">From building pipelines to keeping an engine plant running — every step added a new lens.</p>
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-date">28 SEPT 2026 → ONWARDS</div>
+        <h3>Next Chapter</h3>
+        <div class="tl-org">New role · Manufacturing IT / DevOps</div>
+        <ul>
+          <li>Taking forward everything Cummins taught me about scale, discipline and safety-first thinking</li>
+          <li>Deepening focus on cloud, automation and MES application engineering</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">CUMMINS · COE PHALTAN</div>
+        <h3>IT Support Associate — Level III</h3>
+        <div class="tl-org">Manufacturing IT &amp; Plant Digitalisation</div>
+        <ul>
+          <li>End-to-end IT/OT support for plant operations — applications, infrastructure, network and shop-floor systems</li>
+          <li>Led OT network troubleshooting across VLAN, firewall/NAT and Modbus TCP connectivity between AMR servers and PLCs</li>
+          <li>Delivered Power Apps solutions for HSE observations and maintenance checksheets used across the plant</li>
+          <li>Deployed the VMS visitor management portal and supported EMS/BMS, OT rack and wireless coverage projects</li>
+          <li>Drove procurement, vendor coordination and asset capitalisation for plant IT infrastructure</li>
+          <li>Authored SOPs, user guides and knowledge articles; ran plant-wide communication and awareness campaigns</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">EARLIER</div>
+        <h3>DevOps Engineer</h3>
+        <div class="tl-org">Cloud, CI/CD &amp; Platform Engineering</div>
+        <ul>
+          <li>Built and maintained CI/CD pipelines with Jenkins and GitOps practices</li>
+          <li>Worked across Kubernetes, Docker, Grafana, ELK and messaging infrastructure</li>
+          <li>Foundation that still shapes how I approach automation and reliability today</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap reveal">
+    <div class="eyebrow">04 — Selected Work</div>
+    <h2>Things I'm proud of</h2>
+    <p class="sec-sub">Six initiatives that changed how the plant works day to day — from the OT network up to the people using it.</p>
+    <div class="proj-grid">
+      <article class="proj">
+        <div class="proj-media-wrap">
+          <div class="proj-chip">OT / IT Integration</div>
+          <picture><source srcset="images/ot-network.webp" type="image/webp"><img class="proj-media" src="images/ot-network.jpg" alt="" loading="lazy" decoding="async" width="640" height="426"></picture>
+        </div>
+        <div class="proj-body">
+          <h3>🔌 OT Network Stabilisation</h3>
+          <p>Diagnosed and resolved complex connectivity failures between AMR servers and PLCs on the plant OT network — coordinating network, firewall, LAN and vendor teams through a structured, evidence-led investigation rather than trial and error.</p>
+          <div class="proj-stack"><span>VLAN</span><span>Firewall / NAT</span><span>Modbus TCP</span><span>Siemens S7-1500</span></div>
+          <div class="impact">Restored reliable line communication</div>
+        </div>
+      </article>
+      <article class="proj">
+        <div class="proj-media-wrap">
+          <div class="proj-chip">Manufacturing IT</div>
+          <picture><source srcset="images/automation-line.webp" type="image/webp"><img class="proj-media" src="images/automation-line.jpg" alt="" loading="lazy" decoding="async" width="640" height="426"></picture>
+        </div>
+        <div class="proj-body">
+          <h3>⚙️ Shop-Floor Systems &amp; MES Support</h3>
+          <p>Day-to-day ownership of MES and shop-floor applications supporting the machining and assembly lines — transaction troubleshooting, ERP interface issues, serial tracking and go-live support across shifts.</p>
+          <div class="proj-stack"><span>Apriso / CMES</span><span>SQL / Oracle</span><span>Serial Tracking</span><span>ERP Interface</span></div>
+          <div class="impact">Kept production data flowing, shift after shift</div>
+        </div>
+      </article>
+      <article class="proj">
+        <div class="proj-media-wrap">
+          <div class="proj-chip">Low-Code Delivery</div>
+          <picture><source srcset="images/powerapps.webp" type="image/webp"><img class="proj-media" src="images/powerapps.jpg" alt="" loading="lazy" decoding="async" width="640" height="426"></picture>
+        </div>
+        <div class="proj-body">
+          <h3>📱 HSE &amp; Maintenance Power Apps</h3>
+          <p>Designed and rolled out low-code applications for safety observations and autonomous maintenance checksheets, replacing paper routines with structured digital capture — including user training and SOPs.</p>
+          <div class="proj-stack"><span>Power Apps</span><span>SharePoint</span><span>Power Automate</span><span>SOP Design</span></div>
+          <div class="impact">Faster reporting, stronger compliance</div>
+        </div>
+      </article>
+      <article class="proj">
+        <div class="proj-media-wrap">
+          <div class="proj-chip">Digital Workplace</div>
+          <picture><source srcset="images/vms-portal.webp" type="image/webp"><img class="proj-media" src="images/vms-portal.jpg" alt="" loading="lazy" decoding="async" width="640" height="426"></picture>
+        </div>
+        <div class="proj-body">
+          <h3>🪪 VMS Visitor Management Portal</h3>
+          <p>Deployed and supported the visitor management portal end to end — gate integration, user onboarding, access workflow and adoption across plant teams and security.</p>
+          <div class="proj-stack"><span>VMS Portal</span><span>Access Workflow</span><span>User Enablement</span></div>
+          <div class="impact">Smoother, fully auditable visitor process</div>
+        </div>
+      </article>
+      <article class="proj">
+        <div class="proj-media-wrap">
+          <div class="proj-chip">Infrastructure &amp; Data</div>
+          <picture><source srcset="images/dashboard.webp" type="image/webp"><img class="proj-media" src="images/dashboard.jpg" alt="" loading="lazy" decoding="async" width="640" height="426"></picture>
+        </div>
+        <div class="proj-body">
+          <h3>🏗️ Plant IT Infrastructure &amp; Monitoring</h3>
+          <p>Drove OT rack installation, AP-based wireless coverage, EMS/BMS systems and structured cabling — owning the full cycle from PR justification and vendor comparison through to asset capitalisation.</p>
+          <div class="proj-stack"><span>OT Racks</span><span>Wireless / AP</span><span>EMS / BMS</span><span>PR &amp; PO</span></div>
+          <div class="impact">Built for uptime and future expansion</div>
+        </div>
+      </article>
+      <article class="proj">
+        <div class="proj-media-wrap">
+          <div class="proj-chip">Awareness &amp; Culture</div>
+          <picture><source srcset="images/cybersecurity.webp" type="image/webp"><img class="proj-media" src="images/cybersecurity.jpg" alt="" loading="lazy" decoding="async" width="640" height="426"></picture>
+        </div>
+        <div class="proj-body">
+          <h3>🛡️ HSE &amp; Cybersecurity Campaigns</h3>
+          <p>Created and ran plant-wide awareness campaigns — large-format display content, standees and mandatory training drives designed to be read in seconds on a busy shop floor.</p>
+          <div class="proj-stack"><span>Comms Design</span><span>Training Drives</span><span>Digital Signage</span></div>
+          <div class="impact">Stronger everyday security culture</div>
+        </div>
+      </article>
+    </div>
+    <p class="note-img">Images are representative visuals of industrial IT &amp; OT environments, not actual site photography.</p>
+  </div>
+</section>
+
+<section id="note">
+  <div class="wrap reveal">
+    <div class="eyebrow">05 — A Note</div>
+    <h2>Thank you — for everything</h2>
+    <div class="farewell">
+      <p class="quote">“You don't remember the tickets you closed. You remember the people who picked up the phone at 11 PM, the team that stayed back for the go-live, and the leaders who trusted you before you had the answer.”</p>
+      <p>To my colleagues and leadership — thank you. Thank you for the trust you placed in me, for the problems you let me own, and for the patience you showed while I learned. Every escalation, every project review and every shop-floor walk taught me something I'll carry forward.</p>
+      <p>What I take with me isn't a skill list. It's a way of working: be thorough, be honest about what you don't know, put the end user first, and never let a problem sit unowned.</p>
+      <p>This isn't goodbye — it's simply a change of address. If I can ever help, advise, or just catch up over coffee, my door stays open.</p>
+      <p class="sign">— Arif Hussain · with gratitude</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap reveal">
+    <div class="eyebrow">06 — Contact</div>
+    <h2>Let's keep in touch</h2>
+    <p class="sec-sub">Professional networks matter more than job titles. Reach out anytime.</p>
+    <div class="contact-grid">
+      <a class="cc" href="mailto:YOUR_EMAIL_HERE">
+        <div class="k">Email</div><div class="v">iamarifhussain0@gmail.com</div>
+      </a>
+      <a class="cc" href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener">
+        <div class="k">LinkedIn</div><div class="v">/in/aarif-hussain6019/</div>
+      </a>
+      <a class="cc" href="tel:+91XXXXXXXXXX">
+        <div class="k">Phone</div><div class="v">+91 9682666019</div>
+      </a>
+      <a class="cc" href="#">
+        <div class="k">Location</div><div class="v">Pune, India</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Designed &amp; shared by <strong>Arif Hussain</strong> · 2026</p>
+    <p style="margin-top:6px;opacity:.6">Bridging IT, OT and everything in between.</p>
+  </div>
+</footer>
+
+<script>
+// typing effect
+const roles=["IT Support Associate — Level III","Manufacturing IT & MES Engineer","OT / IT Integration Specialist","DevOps & Cloud Practitioner"];
+let r=0,c=0,del=false;
+const el=document.getElementById('typed');
+(function type(){
+  const t=roles[r];
+  el.textContent=del?t.substring(0,c--):t.substring(0,c++);
+  let s=del?45:85;
+  if(!del&&c===t.length+1){del=true;s=1600;}
+  else if(del&&c===0){del=false;r=(r+1)%roles.length;s=320;}
+  setTimeout(type,s);
+})();
+
+// reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+
+// count up
+const co=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  const n=e.target,tgt=+n.dataset.count;let v=0;
+  const step=()=>{v+=Math.max(1,tgt/28);if(v<tgt){n.textContent=Math.floor(v)+'+';requestAnimationFrame(step);}else n.textContent=tgt+'+';};
+  step();co.unobserve(n);
+}),{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(e=>co.observe(e));
+</script>
+</body>
+</html>
